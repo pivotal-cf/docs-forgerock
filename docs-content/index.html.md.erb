@@ -1,59 +1,93 @@
 ---
-title: YOUR-PRODUCT-NAME
+title: ForgeRock Service Broker for Pivotal Cloud Foundry
 owner: Partners
 ---
 
-**This topic should begin with a brief description of your product. See below for an example.**
+The ForgeRock Service Broker allows Cloud Foundry applications to access 
+OAuth 2.0 features provided by the ForgeRock Identity Platform. 
+Integrate with the ForgeRock Identity Platform to:
 
-This documentation describes the Redis Labs Enterprise Cluster (RLEC) Service Broker for Pivotal Cloud Foundry (PCF). 
-The RLEC Service Broker registers a service broker on PCF and exposes its service plans on the Marketplace. 
-Developers can provision Redis databases by creating instances of the service plans using Apps Manager or the cf CLI.
+* Obtain OAuth 2.0 access tokens using the client credentials grant type.
+* Validate OAuth 2.0 access tokens or OpenID Connect ID tokens passed 
+your application.
 
-## <a id='overview'></a>Overview
+The ForgeRock Service Broker automates the process of creating OAuth 2.0 
+client profiles, and requires a set of credentials with privileges for 
+adding and removing OAuth 2.0 clients. The recommended approach is to 
+create a new user in OpenAM, add the user to a new group, and give that 
+group the `AgentAdmin` privilege, allowing members to create and remove 
+OAuth 2.0 clients. 
 
-**The overview should provide a description of the product's key features.**
-
-YOUR-PRODUCT-NAME includes the following key features:
-
-* Feature one.
-* Feature two.
-* Feature three.
-
-## <a id="snapshot"></a>Product Snapshot
-
-<dl>
-<dt>YOUR-PRODUCT-NAME Details:</dt>
-<dd><strong>Version</strong>: vYOUR-VERSION-NUMBER </dd>
-<dd><strong>Release Date</strong>: YOUR-RELEASE-DATE (Ex: August 1, 2016)</dd>
-<dd><strong>Software component version</strong>: vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.6.x, v1.7.x)</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.4.x, v1.5.x, v1.6.x)</dd>
-<dd><strong>vSphere support?</strong> YES-OR-NO</dd>
-<dd><strong>OpenStack support?</strong> YES-OR-NO</dd>
-<dd><strong>AWS support?</strong> YES-OR-NO</dd>
-</dl>
+For information on creating a user and delegating privileges, see 
+[To Prepare OpenAM for ForgeRock Service Broker Installation](https://backstage.forgerock.com/docs/forgerock-service-broker/current/forgerock-service-broker-guide#to-prepare-openam-for-broker-install) 
+in the 
+[_ForgeRock Service Broker Guide_](https://backstage.forgerock.com/docs/forgerock-service-broker/1/forgerock-service-broker-guide).
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+The ForgeRock Service Broker for Pivotal Cloud Foundry has the following 
+requirements:
 
-YOUR-PRODUCT-NAME has the following requirements:
+* An instance of OpenAM 13 or newer that is accessible from the Pivotal 
+Cloud Foundry environment.
 
-+ PREREQUISITE-1
+## <a id="install-and-use"></a>Installation and Usage
 
-+ PREREQUISITE-2
+For information on installation and usage of the ForgeRock Service 
+Broker, see the 
+[_ForgeRock Service Broker Guide_](https://backstage.forgerock.com/docs/forgerock-service-broker/current/forgerock-service-broker-guide).
 
-## <a id="limitations"></a>Limitations
+## <a id="limitations"></a>New features, Fixes, Changes, and Limitations
 
-**List any known limitations.**
+For information on new features, fixes, changes, known issues, and 
+limitations, see the 
+[_ForgeRock Service Broker Release Notes_](https://backstage.forgerock.com/docs/forgerock-service-broker/current/release-notes) .
 
-## <a id="feedback"></a>Feedback
+## <a id="feedback"></a>Getting Support
 
-Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+For more information or resources about the ForgeRock Service Broker and 
+ForgeRock Support, see the following topics:
 
-## <a id='license'></a>License
+### <a id="contact"></a>Contacting ForgeRock
 
-**List any license information here.**
+ForgeRock provides support services, professional services, classes 
+through ForgeRock University, and partner services to assist you in 
+setting up and maintaining your deployments. For a general overview of 
+these services, see https://www.forgerock.com/services/.
+
+ForgeRock has staff members around the globe who support our 
+international customers and partners. If you have any questions, contact 
+ForgeRock using the address or telephone number nearest to you. 
+
+Find the latest addresses and telephone numbers at 
+https://www.forgerock.com/contact/ or send an email to ForgeRock at 
+info@forgerock.com. 
+
+### <a id="community"></a>Joining the ForgeRock Community
+
+Visit the [Community resource center](https://forgerock.org) where you 
+can find information about each project, download nightly builds, browse 
+the resource catalog, ask and answer questions on the forums, find 
+community events near you, and of course get the source code as well.
+
+### <a id="feedback"></a>How to Report Problems or Provide Feedback
+
+If you have found issues or reproducible bugs within ForgeRock Service 
+Broker for Pivotal Cloud Foundry, report them at 
+https://bugster.forgerock.org/jira/projects/BROKER/issues/.
+
+When requesting help with a problem, include the following information:
+
+* Description of the problem, including when the problem occurs and its 
+  impact on your operation
+* Description of the environment, including the following information:
+    * Machine type
+    * Operating system and version    
+    * Web server or container and version
+    * Java version
+    * ForgeRock Identity Platform versions
+    * Any patches or other software that might be affecting the problem
+* Steps to reproduce the problem
+* Any relevant access and error logs, stack traces, or core dumps
+
 
