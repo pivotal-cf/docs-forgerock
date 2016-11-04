@@ -5,9 +5,9 @@
 :subnav_templates:
   myservice: myservice_subnav
 :template_variables: 
-:local_repo_dir: "/Users/Chris/Repositories/cloud/docs-forgerock"
+:local_repo_dir: "/Users/pivotal/workspace/docs-forgerock"
 :workspace: !ruby/object:Pathname
-  path: "/Users/Chris/Repositories/cloud/docs-forgerock/docs-book/output/master_middleman/source"
+  path: "/Users/pivotal/workspace/docs-forgerock/docs-book/output/master_middleman/source"
 :feedback_enabled: 
 :repo_link_enabled: true
 :repo_links:
