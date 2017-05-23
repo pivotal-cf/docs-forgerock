@@ -3,71 +3,78 @@ title: ForgeRock Service Broker for Pivotal Cloud Foundry
 owner: Partners
 ---
 
-This documentation describes the ForgeRock Service Broker for Pivotal Cloud Foundry (PCF). The ForgeRock Service Broker for PCF enables applications deployed to PCF to access OAuth 2.0 features provided by the ForgeRock Identity Platform. 
+This documentation describes the ForgeRock Service Broker for Pivotal Cloud Foundry (PCF). The ForgeRock Service Broker for PCF enables applications deployed to PCF to benefit from the OAuth 2.0 features and route service provided by the ForgeRock Identity Platform. 
 
 ##<a id='overview'></a> Overview
 
-The ForgeRock Service Broker for PCF enables applications to integrate with the ForgeRock Identity Platform, which has the following features:
+The ForgeRock Service Broker for PCF enables applications to integrate with the following features of the ForgeRock Identity Platform:
 
-* Obtain OAuth 2.0 access tokens using the client credentials grant type
-* Validate OAuth 2.0 access tokens or OpenID Connect ID tokens passed to 
-your application
+* AM OAuth 2.0 Service,  to obtain OAuth 2.0 access tokens by using the the client credentials grant type, and to validate OAuth 2.0 access tokens or OpenID Connect ID tokens passed to your application.
+* IG Route Service, to filter traffic to and from Cloud Foundry applications, adapting requests to protect applications, and adapting responses to filter outgoing content.
 
 ## <a id="reqs"></a>Requirements
 
-The ForgeRock Service Broker for PCF requires an instance of [OpenAM](https://forgerock.org/openam/) v13.0 or later that is accessible from the PCF environment.
+The ForgeRock Service Broker for PCF requires the following installations to be accessible from the PCF environment:
+
+* For the <b>forgerock-am-oauth2</b> service, an instance of [ForgeRock Access Management](https://www.forgerock.com/platform/access-management/) v13.0 or later
+* For the <b>forgerock-ig-route-service</b> service, an instance of [ForgeRock Identity Gateway](https://www.forgerock.com/platform/identity-gateway/) v5.0 or later
 
 ## <a id="install-and-use"></a>Installation and Usage
 
-For information on installation and usage of the ForgeRock Service Broker, see the [ForgeRock Service Broker Guide](https://backstage.forgerock.com/docs/forgerock-service-broker/current/forgerock-service-broker-guide).
+For information about installing and using the ForgeRock Service Broker, 
+see the [ForgeRock Service Broker Guide](https://backstage.forgerock.com/docs/forgerock-service-broker/1/forgerock-service-broker-guide).
 
-The ForgeRock Service Broker automates the process of creating OAuth 2.0 
+* AM OAuth 2.0 Service
+
+Through the AM OAuth 2.0 Service, the ForgeRock Service Broker 
+automates the process of creating OAuth 2.0 
 client profiles, and requires a set of credentials with privileges for 
 adding and removing OAuth 2.0 clients. The recommended approach is to 
-create a new user in OpenAM, add the user to a new group, and give that 
+create a new user in ForgeRock Access Management, add the user to a new group, and give that 
 group the `AgentAdmin` privilege, allowing members to create and remove 
 OAuth 2.0 clients. 
 
-For information on creating a user and delegating privileges, see 
-[To Prepare OpenAM for ForgeRock Service Broker Installation](https://backstage.forgerock.com/docs/forgerock-service-broker/current/forgerock-service-broker-guide#to-prepare-openam-for-broker-install) 
+For information about creating a user and delegating privileges, see 
+[To Prepare ForgeRock Access Management for ForgeRock Service Broker Installation](https://backstage.forgerock.com/docs/forgerock-service-broker/current/forgerock-service-broker-guide#to-prepare-openam-for-broker-install) 
 in the [ForgeRock Service Broker Guide](https://backstage.forgerock.com/docs/forgerock-service-broker/1/forgerock-service-broker-guide).
+
+* IG Route Service
+
+The IG Route Service is a fully brokered route service to filter traffic to and from Cloud Foundry applications,
+adapting requests to protect applications, and adapting responses to filter outgoing content
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about ForgeRock Service Broker for Pivotal Cloud Foundry:
+The following table provides information about ForgeRock Service Broker version and version-support for Pivotal Cloud Foundry:
 
 <table class="nice">
     <th>Element</th>
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>v1.0.12</td>
+        <td>v2.0.1</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>November 15, 2016</td>
+        <td>May 19, 2017</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>ForgeRock Service Broker v1.0.12</td>
+        <td>ForgeRock Service Broker v2.0.1</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>v1.8.x</td>
+        <td>v1.9.x</td>
     </tr>
     <tr>
         <td>Compatible Elastic Runtime version(s)</td>
-        <td>v1.8.x</td>
-    </tr>
-    <tr>
-        <td>IaaS support</td>
-        <td>AWS, OpenStack, and vSphere</td>
+        <td>v1.9.x</td>
     </tr>
 </table>
 
 ## <a id="limitations"></a>New Features, Fixes, Changes, and Limitations
 
-For information on new features, fixes, changes, known issues, and limitations, see the [ForgeRock Service Broker Release Notes](https://backstage.forgerock.com/docs/forgerock-service-broker/current/release-notes).
+For information about new features, fixes, changes, known issues, and limitations, see the [ForgeRock Service Broker Release Notes](https://backstage.forgerock.com/docs/forgerock-service-broker/2/release-notes).
 
 ## <a id="support"></a>Support and Services
 
@@ -78,14 +85,10 @@ ForgeRock has staff members around the globe who support our international custo
 Find the latest addresses and telephone numbers at the ForgeRock [website](https://www.forgerock.com/contact/) or send an email to ForgeRock at 
 info@forgerock.com. 
 
-## <a id="community"></a>Community
-
-Visit the [Community resource center](https://forgerock.org) where you can find information about each project, download nightly builds, browse the resource catalog, ask and answer questions on the forums, find community events near you, and obtain source code.
-
 ## <a id="feedback"></a>Feedback
 
 If you have found issues or reproducible bugs within the ForgeRock Service 
-Broker for PCF, report them at the ForgeRock [website](https://bugster.forgerock.org/jira/projects/BROKER/issues/).
+Broker for PCF, report them at the ForgeRock [website](https://bugster.forgerock.org/jira/projects/SERVBROKER/issues/).
 
 When requesting help with a problem, include the following information:
 
@@ -93,7 +96,7 @@ When requesting help with a problem, include the following information:
   impact on your operation
 * Description of the environment, including the following information:
     * Machine type
-    * Operating system and version    
+    * Operating system and version
     * Web server or container and version
     * Java version
     * ForgeRock Identity Platform versions
